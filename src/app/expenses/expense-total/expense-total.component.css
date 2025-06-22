@@ -1,16 +1,30 @@
-.total-card {
-  text-align: center;
-  margin: 24px auto;
-  max-width: 400px;
-  background-color: #1e1e2f;
-  border-left: 8px solid #26c6da;
+::ng-deep .total-card {
+  background: rgba(20, 20, 40, 0.7);
+  border: 2px solid #00ffff;
+  border-radius: 16px;
   padding: 24px;
-  border-radius: 12px;
-  color: #e0f7fa;
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.5);
+  color: #00ffff;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+  max-width: 300px;
+  margin: 20px auto;
 }
 
-h1 {
-  color: #26c6da;
-  margin-bottom: 8px;
+
+::ng-deep .total-card h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #00ffff;
 }
+
+::ng-deep .total-card p {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 12px;
+  color: #ffffff;
+}
+

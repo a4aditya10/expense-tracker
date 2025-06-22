@@ -17,15 +17,15 @@
   min-height: 100vh;
   overflow-y: auto;
 }
-.app-toolbar {
-  background-color: #c2185b; /* Deep Pink */
+/* .app-toolbar {
+  background-color: #c2185b; 
   display: flex;
   align-items: center;
   padding: 0 16px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
+} */
 
-.app-icon {
+/* .app-icon {
   margin-right: 12px;
   color: #ffffff;
 }
@@ -35,4 +35,35 @@
   font-weight: 600;
   color: #ffffff;
   letter-spacing: 1px;
+} */
+::ng-deep .app-toolbar {
+  background: linear-gradient(to right, #d4145a, #fbb03b);
+  color: white;
+  padding: 0 20px;
+  height: 64px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+::ng-deep .app-icon {
+  margin-right: 10px;
+  font-size: 28px;
+  color: #fff;
+}
+
+::ng-deep .app-title {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+
+/* Optional: bounce animation for fun effect */
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-3px);
+  }
 }
