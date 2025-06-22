@@ -1,0 +1,19 @@
+.main-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.sidebar {
+  width: 30%;
+  padding: 10px;
+  border-left: 1px solid #ccc;
+  background-color: #1e1e1e;
+  color: white;
+  min-height: 100vh;
+  overflow-y: auto;
+}

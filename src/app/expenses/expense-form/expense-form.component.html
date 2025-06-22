@@ -1,0 +1,40 @@
+<mat-card class="form-card">
+  <form #expenseForm="ngForm" (ngSubmit)="onSubmit(expenseForm)">
+    
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Title</mat-label>
+      <input matInput name="title" ngModel required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Amount</mat-label>
+      <input matInput type="number" name="amount" ngModel required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Category</mat-label>
+      <mat-select name="category" ngModel required>
+        <mat-option value="Food">Food</mat-option>
+        <mat-option value="Travel">Travel</mat-option>
+        <mat-option value="Shopping">Shopping</mat-option>
+        <mat-option value="Bills">Bills</mat-option>
+        <mat-option value="Others">Others</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Date</mat-label>
+      <input matInput [matDatepicker]="picker" name="date" ngModel required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <div class="button-row">
+      <button mat-raised-button color="primary" type="submit" [disabled]="expenseForm.invalid">
+        Add Expense
+      </button>
+    </div>
+
+  </form>
+</mat-card>
+

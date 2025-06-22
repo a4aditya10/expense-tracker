@@ -1,0 +1,10 @@
+<mat-card class="expense-card" *ngFor="let expense of expenses">
+  <mat-card-title>{{ expense.title }}</mat-card-title>
+  <mat-card-subtitle>{{ expense.category }} - ₹{{ expense.amount }}</mat-card-subtitle>
+  <mat-card-content>
+    {{ expense.date | date }}
+  </mat-card-content>
+  <button mat-button color="warn" (click)="onDelete(expense.id)">
+    Delete
+  </button>
+</mat-card>

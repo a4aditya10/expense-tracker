@@ -1,0 +1,36 @@
+.form-card {
+  max-width: 500px;
+  margin: 32px auto;
+  padding: 24px;
+  background-color: #1e1e2f;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+mat-form-field {
+  color: #ffffff;
+}
+
+mat-label {
+  color: #b0bec5 !important;
+}
+
+.button-row {
+  text-align: right;
+}
+
+.submit-button {
+  background-color: #26c6da;
+  color: #121212;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.submit-button:hover {
+  background-color: #00acc1;
+}
