@@ -11,6 +11,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { RouterModule } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
+
 import { AppComponent } from './app.component';
 import { ExpenseFormComponent } from './expenses/expense-form/expense-form.component';
 import { ExpenseListComponent } from './expenses/expense-list/expense-list.component';
@@ -39,7 +41,8 @@ import { HomeComponent } from './home/home.component';
     MatNativeDateModule,
     MatToolbarModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -34,3 +34,12 @@ mat-label {
 .submit-button:hover {
   background-color: #00acc1;
 }
+input.mat-input-element[type='number']::-webkit-outer-spin-button,
+input.mat-input-element[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input.mat-input-element[type='number'] {
+  -moz-appearance: textfield;
+}

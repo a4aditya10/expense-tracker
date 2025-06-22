@@ -27,16 +27,28 @@ export class ExpenseListComponent implements OnInit {
     this.expenses = this.expenseService.getExpenses();
   }
 
-  filteredExpenses(): Expense[] {
-    return this.expenses.filter((expense) => {
-      const matchesCategory =
-        !this.selectedCategory || expense.category === this.selectedCategory;
+    sortOrder: string = ''; // 'asc' or 'desc'
 
-      const expenseDate = new Date(expense.date);
-      const matchesFrom = !this.fromDate || expenseDate >= this.fromDate;
-      const matchesTo = !this.toDate || expenseDate <= this.toDate;
+filteredExpenses(): Expense[] {
+  let filtered = this.expenses.filter((expense) => {
+    const matchesCategory =
+      !this.selectedCategory || expense.category === this.selectedCategory;
 
-      return matchesCategory && matchesFrom && matchesTo;
-    });
+    const expenseDate = new Date(expense.date);
+    const matchesFrom = !this.fromDate || expenseDate >= this.fromDate;
+    const matchesTo = !this.toDate || expenseDate <= this.toDate;
+
+    return matchesCategory && matchesFrom && matchesTo;
+  });
+
+  if (this.sortOrder === 'asc') {
+    filtered.sort((a, b) => a.amount - b.amount);
+  } else if (this.sortOrder === 'desc') {
+    filtered.sort((a, b) => b.amount - a.amount);
   }
+
+  return filtered;
+}
+
+
 }
