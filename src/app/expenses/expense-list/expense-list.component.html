@@ -1,10 +1,37 @@
-<mat-card class="expense-card" *ngFor="let expense of expenses">
+<div class="filter-bar">
+  <mat-form-field class="filter-field" appearance="fill">
+    <mat-label>Filter by Category</mat-label>
+    <mat-select [(ngModel)]="selectedCategory">
+      <mat-option value="">All</mat-option>
+      <mat-option *ngFor="let category of categories" [value]="category">
+        {{ category }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="filter-field" appearance="fill">
+    <mat-label>From Date</mat-label>
+    <input matInput [matDatepicker]="picker1" [(ngModel)]="fromDate" />
+    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field class="filter-field" appearance="fill">
+    <mat-label>To Date</mat-label>
+    <input matInput [matDatepicker]="picker2" [(ngModel)]="toDate" />
+    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker2></mat-datepicker>
+  </mat-form-field>
+</div>
+
+<!-- Expense Cards -->
+<mat-card class="expense-card" *ngFor="let expense of filteredExpenses()">
   <mat-card-title>{{ expense.title }}</mat-card-title>
   <mat-card-subtitle>{{ expense.category }} - ₹{{ expense.amount }}</mat-card-subtitle>
   <mat-card-content>
     {{ expense.date | date }}
   </mat-card-content>
-  <button mat-button color="warn" (click)="onDelete(expense.id)">
+  <button mat-button color="warn" (click)="deleteExpense(expense.id)">
     Delete
   </button>
 </mat-card>

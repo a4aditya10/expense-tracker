@@ -10,16 +10,33 @@ import { Expense } from '../expense.model';
 export class ExpenseListComponent implements OnInit {
   expenses: Expense[] = [];
 
+  selectedCategory: string = '';
+  fromDate?: Date;
+  toDate?: Date;
+
+  categories: string[] = ['Food', 'Travel', 'Bills', 'Shopping', 'Others'];
+
   constructor(private expenseService: ExpenseService) {}
 
   ngOnInit(): void {
-    this.expenseService.expenses$.subscribe((data) => {
-      this.expenses = data;
-    });
+    this.expenses = this.expenseService.getExpenses();
   }
 
-  onDelete(id: string): void {
+  deleteExpense(id: string) {
     this.expenseService.deleteExpense(id);
-    // ❌ No need to manually refresh here now!
+    this.expenses = this.expenseService.getExpenses();
+  }
+
+  filteredExpenses(): Expense[] {
+    return this.expenses.filter((expense) => {
+      const matchesCategory =
+        !this.selectedCategory || expense.category === this.selectedCategory;
+
+      const expenseDate = new Date(expense.date);
+      const matchesFrom = !this.fromDate || expenseDate >= this.fromDate;
+      const matchesTo = !this.toDate || expenseDate <= this.toDate;
+
+      return matchesCategory && matchesFrom && matchesTo;
+    });
   }
 }
