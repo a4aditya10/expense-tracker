@@ -30,3 +30,8 @@ html {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+::ng-deep input::placeholder,
+::ng-deep mat-select-placeholder {
+  color: #b0bec5 !important;
+  opacity: 0.8;
+}
