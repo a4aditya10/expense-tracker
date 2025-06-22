@@ -1,0 +1,15 @@
+::ng-deep button[mat-raised-button] {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 8px 24px;
+  box-shadow: 0 4px 12px rgba(0, 114, 255, 0.3);
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+::ng-deep button[mat-raised-button]:hover {
+  box-shadow: 0 6px 18px rgba(0, 114, 255, 0.5);
+  transform: translateY(-2px);
+}
