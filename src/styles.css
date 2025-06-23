@@ -34,4 +34,5 @@ html {
 ::ng-deep mat-select-placeholder {
   color: #b0bec5 !important;
   opacity: 0.8;
+  
 }
